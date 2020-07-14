@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         try {
-                            doPing();
+//                            doPing();
+                            new ProxyUtils().setWifiProxySettings(MainActivity.this);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -110,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 }).start();
             }
         });
-
+        new ProxyUtils().setWifiProxySettings(this);
     }
 
     private void appendResultsText(final String text) {
